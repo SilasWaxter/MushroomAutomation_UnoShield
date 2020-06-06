@@ -1,0 +1,654 @@
+EESchema Schematic File Version 4
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L 3rdParty_SamacSys_Parts:JQC-3F-_T73_-1Z-12VDC Relay-Solenoid1
+U 1 1 5ECDDE2D
+P 2700 1750
+F 0 "Relay-Solenoid1" H 3350 2015 50  0000 C CNN
+F 1 "JQC-3F-_T73_-1Z-12VDC" H 3350 1924 50  0000 C CNN
+F 2 "3rdParty_SamacSys_Parts:JQC3FT731Z12VDC" H 3850 1850 50  0001 L CNN
+F 3 "https://img.ozdisan.com/ETicaret_Dosya/341245_8627675.pdf" H 3850 1750 50  0001 L CNN
+F 4 "RELAY POWER 10A 12VDC 1C PCB TYPE (JS1) 5PIN QIANJ" H 3850 1650 50  0001 L CNN "Description"
+F 5 "15.5" H 3850 1550 50  0001 L CNN "Height"
+F 6 "QIANJI" H 3850 1450 50  0001 L CNN "Manufacturer_Name"
+F 7 "JQC-3F-(T73)-1Z-12VDC" H 3850 1350 50  0001 L CNN "Manufacturer_Part_Number"
+	1    2700 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L MCU_Module:Arduino_UNO_R3 A1
+U 1 1 5ECDFBA9
+P 5500 1900
+F 0 "A1" H 5500 3081 50  0000 C CNN
+F 1 "Arduino_UNO_R3" H 5500 2990 50  0000 C CNN
+F 2 "Module:Arduino_UNO_R3" H 5650 850 50  0001 L CNN
+F 3 "https://www.arduino.cc/en/Main/arduinoBoardUno" H 5300 2950 50  0001 C CNN
+	1    5500 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3rdParty_SamacSys_Parts:JQC-3F-_T73_-1Z-12VDC Relay-Mister1
+U 1 1 5ECEC9FC
+P 2700 1100
+F 0 "Relay-Mister1" H 3350 1365 50  0000 C CNN
+F 1 "JQC-3F-_T73_-1Z-12VDC" H 3350 1274 50  0000 C CNN
+F 2 "3rdParty_SamacSys_Parts:JQC3FT731Z12VDC" H 3850 1200 50  0001 L CNN
+F 3 "https://img.ozdisan.com/ETicaret_Dosya/341245_8627675.pdf" H 3850 1100 50  0001 L CNN
+F 4 "RELAY POWER 10A 12VDC 1C PCB TYPE (JS1) 5PIN QIANJ" H 3850 1000 50  0001 L CNN "Description"
+F 5 "15.5" H 3850 900 50  0001 L CNN "Height"
+F 6 "QIANJI" H 3850 800 50  0001 L CNN "Manufacturer_Name"
+F 7 "JQC-3F-(T73)-1Z-12VDC" H 3850 700 50  0001 L CNN "Manufacturer_Part_Number"
+	1    2700 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3rdParty_SamacSys_Parts:JQC-3F-_T73_-1Z-12VDC Relay-Fan1
+U 1 1 5ECED196
+P 2700 2400
+F 0 "Relay-Fan1" H 3350 2665 50  0000 C CNN
+F 1 "JQC-3F-_T73_-1Z-12VDC" H 3350 2574 50  0000 C CNN
+F 2 "3rdParty_SamacSys_Parts:JQC3FT731Z12VDC" H 3850 2500 50  0001 L CNN
+F 3 "https://img.ozdisan.com/ETicaret_Dosya/341245_8627675.pdf" H 3850 2400 50  0001 L CNN
+F 4 "RELAY POWER 10A 12VDC 1C PCB TYPE (JS1) 5PIN QIANJ" H 3850 2300 50  0001 L CNN "Description"
+F 5 "15.5" H 3850 2200 50  0001 L CNN "Height"
+F 6 "QIANJI" H 3850 2100 50  0001 L CNN "Manufacturer_Name"
+F 7 "JQC-3F-(T73)-1Z-12VDC" H 3850 2000 50  0001 L CNN "Manufacturer_Part_Number"
+	1    2700 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 Servo1
+U 1 1 5ECF31BF
+P 8200 1150
+F 0 "Servo1" H 8280 1192 50  0000 L CNN
+F 1 "Conn_01x03" H 8280 1101 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 8200 1150 50  0001 C CNN
+F 3 "~" H 8200 1150 50  0001 C CNN
+	1    8200 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 DHT11-1
+U 1 1 5ECF4936
+P 8200 1550
+F 0 "DHT11-1" H 8280 1592 50  0000 L CNN
+F 1 "Conn_01x03" H 8280 1501 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 8200 1550 50  0001 C CNN
+F 3 "~" H 8200 1550 50  0001 C CNN
+	1    8200 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 DHT11-2
+U 1 1 5ECF4B15
+P 8200 1950
+F 0 "DHT11-2" H 8280 1992 50  0000 L CNN
+F 1 "Conn_01x03" H 8280 1901 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 8200 1950 50  0001 C CNN
+F 3 "~" H 8200 1950 50  0001 C CNN
+	1    8200 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 DHT11-3
+U 1 1 5ECF4DC7
+P 8200 2350
+F 0 "DHT11-3" H 8280 2392 50  0000 L CNN
+F 1 "Conn_01x03" H 8280 2301 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 8200 2350 50  0001 C CNN
+F 3 "~" H 8200 2350 50  0001 C CNN
+	1    8200 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 DHT11-4
+U 1 1 5ECF6074
+P 8200 2750
+F 0 "DHT11-4" H 8280 2792 50  0000 L CNN
+F 1 "Conn_01x03" H 8280 2701 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 8200 2750 50  0001 C CNN
+F 3 "~" H 8200 2750 50  0001 C CNN
+	1    8200 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 Connection-WaterSwitch1
+U 1 1 5ECF6217
+P 4250 4250
+F 0 "Connection-WaterSwitch1" H 4330 4242 50  0000 L CNN
+F 1 "Conn_01x02" H 4330 4151 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 4250 4250 50  0001 C CNN
+F 3 "~" H 4250 4250 50  0001 C CNN
+	1    4250 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 Connection-Solenoid1
+U 1 1 5ECF7E44
+P 3550 4250
+F 0 "Connection-Solenoid1" H 3630 4242 50  0000 L CNN
+F 1 "Conn_01x02" H 3630 4151 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 3550 4250 50  0001 C CNN
+F 3 "~" H 3550 4250 50  0001 C CNN
+	1    3550 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 Connection-Mister1
+U 1 1 5ECF8003
+P 3900 4250
+F 0 "Connection-Mister1" H 3980 4242 50  0000 L CNN
+F 1 "Conn_01x02" H 3980 4151 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 3900 4250 50  0001 C CNN
+F 3 "~" H 3900 4250 50  0001 C CNN
+	1    3900 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 Connection-Fan1
+U 1 1 5ECF83E3
+P 3200 4250
+F 0 "Connection-Fan1" H 3280 4242 50  0000 L CNN
+F 1 "Conn_01x02" H 3280 4151 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 3200 4250 50  0001 C CNN
+F 3 "~" H 3200 4250 50  0001 C CNN
+	1    3200 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L 3rdParty_SamacSys_Parts:JQC-3F-_T73_-1Z-12VDC Relay-Heater1
+U 1 1 5ECF97A8
+P 2700 3050
+F 0 "Relay-Heater1" H 3350 3315 50  0000 C CNN
+F 1 "JQC-3F-_T73_-1Z-12VDC" H 3350 3224 50  0000 C CNN
+F 2 "3rdParty_SamacSys_Parts:JQC3FT731Z12VDC" H 3850 3150 50  0001 L CNN
+F 3 "https://img.ozdisan.com/ETicaret_Dosya/341245_8627675.pdf" H 3850 3050 50  0001 L CNN
+F 4 "RELAY POWER 10A 12VDC 1C PCB TYPE (JS1) 5PIN QIANJ" H 3850 2950 50  0001 L CNN "Description"
+F 5 "15.5" H 3850 2850 50  0001 L CNN "Height"
+F 6 "QIANJI" H 3850 2750 50  0001 L CNN "Manufacturer_Name"
+F 7 "JQC-3F-(T73)-1Z-12VDC" H 3850 2650 50  0001 L CNN "Manufacturer_Part_Number"
+	1    2700 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 24V_IN1
+U 1 1 5ECFE970
+P 7200 4050
+F 0 "24V_IN1" V 7164 3862 50  0000 R CNN
+F 1 "Conn_01x02" V 7073 3862 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 7200 4050 50  0001 C CNN
+F 3 "~" H 7200 4050 50  0001 C CNN
+	1    7200 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 12V_IN1
+U 1 1 5ED0158E
+P 6200 4050
+F 0 "12V_IN1" V 6164 3862 50  0000 R CNN
+F 1 "Conn_01x02" V 6073 3862 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 6200 4050 50  0001 C CNN
+F 3 "~" H 6200 4050 50  0001 C CNN
+	1    6200 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 HeaterVolt_IN1
+U 1 1 5ED01914
+P 5200 4050
+F 0 "HeaterVolt_IN1" V 5164 3862 50  0000 R CNN
+F 1 "Conn_01x02" V 5073 3862 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 5200 4050 50  0001 C CNN
+F 3 "~" H 5200 4050 50  0001 C CNN
+	1    5200 4050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4900 2400 5000 2400
+$Comp
+L power:-24V #PWR0101
+U 1 1 5ED16602
+P 7200 4400
+F 0 "#PWR0101" H 7200 4500 50  0001 C CNN
+F 1 "-24V" V 7215 4528 50  0000 L CNN
+F 2 "" H 7200 4400 50  0001 C CNN
+F 3 "" H 7200 4400 50  0001 C CNN
+	1    7200 4400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+24V #PWR0102
+U 1 1 5ED17962
+P 7300 4400
+F 0 "#PWR0102" H 7300 4250 50  0001 C CNN
+F 1 "+24V" V 7315 4528 50  0000 L CNN
+F 2 "" H 7300 4400 50  0001 C CNN
+F 3 "" H 7300 4400 50  0001 C CNN
+	1    7300 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+12V #PWR0104
+U 1 1 5ED19422
+P 6300 4400
+F 0 "#PWR0104" H 6300 4250 50  0001 C CNN
+F 1 "+12V" V 6315 4528 50  0000 L CNN
+F 2 "" H 6300 4400 50  0001 C CNN
+F 3 "" H 6300 4400 50  0001 C CNN
+	1    6300 4400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6300 4250 6300 4400
+Wire Wire Line
+	6200 4250 6200 4400
+Wire Wire Line
+	7300 4400 7300 4250
+Wire Wire Line
+	7200 4250 7200 4400
+$Comp
+L power:+12V #PWR0105
+U 1 1 5ED1D129
+P 4900 700
+F 0 "#PWR0105" H 4900 550 50  0001 C CNN
+F 1 "+12V" H 4915 873 50  0000 C CNN
+F 2 "" H 4900 700 50  0001 C CNN
+F 3 "" H 4900 700 50  0001 C CNN
+	1    4900 700 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0106
+U 1 1 5ED28AA5
+P 6100 700
+F 0 "#PWR0106" H 6100 550 50  0001 C CNN
+F 1 "+5V" H 6115 873 50  0000 C CNN
+F 2 "" H 6100 700 50  0001 C CNN
+F 3 "" H 6100 700 50  0001 C CNN
+	1    6100 700 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 900  6100 900 
+Wire Wire Line
+	6100 900  6100 700 
+Wire Wire Line
+	4900 700  4900 900 
+Wire Wire Line
+	4900 900  5400 900 
+Wire Wire Line
+	8000 1250 7900 1250
+Wire Wire Line
+	7900 1250 7900 1650
+Wire Wire Line
+	7900 2850 8000 2850
+Wire Wire Line
+	8000 2450 7900 2450
+Connection ~ 7900 2450
+Wire Wire Line
+	7900 2450 7900 2850
+Wire Wire Line
+	8000 2050 7900 2050
+Connection ~ 7900 2050
+Wire Wire Line
+	7900 2050 7900 2450
+Wire Wire Line
+	8000 1650 7900 1650
+Connection ~ 7900 1650
+Wire Wire Line
+	7900 1650 7900 2050
+Wire Wire Line
+	7800 1150 7800 1550
+Wire Wire Line
+	7800 2750 8000 2750
+Wire Wire Line
+	7800 1150 8000 1150
+Wire Wire Line
+	7800 2350 8000 2350
+Connection ~ 7800 2350
+Wire Wire Line
+	7800 2350 7800 2750
+Wire Wire Line
+	8000 1950 7800 1950
+Connection ~ 7800 1950
+Wire Wire Line
+	7800 1950 7800 2350
+Wire Wire Line
+	8000 1550 7800 1550
+Connection ~ 7800 1550
+Wire Wire Line
+	7800 1550 7800 1750
+Wire Wire Line
+	8000 1850 7650 1850
+Wire Wire Line
+	7650 1850 7650 2000
+Wire Wire Line
+	7650 2000 6000 2000
+Wire Wire Line
+	8000 2250 7650 2250
+Wire Wire Line
+	7650 2100 6000 2100
+Wire Wire Line
+	7650 2100 7650 2250
+Wire Wire Line
+	8000 1450 7550 1450
+Wire Wire Line
+	7550 1450 7550 1900
+Wire Wire Line
+	6000 1900 7550 1900
+Wire Wire Line
+	7550 2200 7550 2650
+Wire Wire Line
+	7550 2650 8000 2650
+Wire Wire Line
+	6000 2200 7550 2200
+Wire Wire Line
+	8000 1050 7400 1050
+Wire Wire Line
+	5000 1800 4800 1800
+Wire Wire Line
+	4800 1800 4800 3050
+Wire Wire Line
+	4800 3050 4000 3050
+Wire Wire Line
+	4000 2400 4700 2400
+Wire Wire Line
+	4700 2400 4700 1700
+Wire Wire Line
+	4700 1700 5000 1700
+Wire Wire Line
+	5000 1600 4600 1600
+Wire Wire Line
+	4600 1600 4600 1750
+Wire Wire Line
+	4600 1750 4000 1750
+Wire Wire Line
+	5000 1500 4600 1500
+Wire Wire Line
+	4600 1500 4600 1100
+Wire Wire Line
+	4600 1100 4000 1100
+$Comp
+L power:+5V #PWR0107
+U 1 1 5ED6FA71
+P 4150 4050
+F 0 "#PWR0107" H 4150 3900 50  0001 C CNN
+F 1 "+5V" H 4165 4223 50  0000 C CNN
+F 2 "" H 4150 4050 50  0001 C CNN
+F 3 "" H 4150 4050 50  0001 C CNN
+	1    4150 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR0108
+U 1 1 5ED70074
+P 3100 4050
+F 0 "#PWR0108" H 3100 3900 50  0001 C CNN
+F 1 "+12V" H 3115 4223 50  0000 C CNN
+F 2 "" H 3100 4050 50  0001 C CNN
+F 3 "" H 3100 4050 50  0001 C CNN
+	1    3100 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR0109
+U 1 1 5ED7692E
+P 3450 4050
+F 0 "#PWR0109" H 3450 3900 50  0001 C CNN
+F 1 "+12V" H 3465 4223 50  0000 C CNN
+F 2 "" H 3450 4050 50  0001 C CNN
+F 3 "" H 3450 4050 50  0001 C CNN
+	1    3450 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+24V #PWR0110
+U 1 1 5ED7888F
+P 3800 4050
+F 0 "#PWR0110" H 3800 3900 50  0001 C CNN
+F 1 "+24V" H 3815 4223 50  0000 C CNN
+F 2 "" H 3800 4050 50  0001 C CNN
+F 3 "" H 3800 4050 50  0001 C CNN
+	1    3800 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 Connection-Heater1
+U 1 1 5ECFE87C
+P 2850 4250
+F 0 "Connection-Heater1" H 2930 4242 50  0000 L CNN
+F 1 "Conn_01x02" H 2930 4151 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 2850 4250 50  0001 C CNN
+F 3 "~" H 2850 4250 50  0001 C CNN
+	1    2850 4250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3900 4050 4000 4050
+Wire Wire Line
+	4000 4050 4000 3750
+Wire Wire Line
+	4000 3750 4500 3750
+Wire Wire Line
+	4500 3750 4500 1200
+Wire Wire Line
+	4500 1200 4000 1200
+Wire Wire Line
+	4000 1850 4400 1850
+Wire Wire Line
+	4400 1850 4400 3650
+Wire Wire Line
+	4400 3650 3650 3650
+Wire Wire Line
+	3650 3650 3650 4050
+Wire Wire Line
+	3650 4050 3550 4050
+Wire Wire Line
+	3200 4050 3300 4050
+Wire Wire Line
+	3300 4050 3300 3550
+Wire Wire Line
+	3300 3550 4300 3550
+Wire Wire Line
+	4300 3550 4300 2500
+Wire Wire Line
+	4300 2500 4000 2500
+Wire Wire Line
+	4000 3150 4200 3150
+Wire Wire Line
+	4200 3150 4200 3450
+Wire Wire Line
+	4200 3450 2950 3450
+Wire Wire Line
+	2950 3450 2950 4050
+Wire Wire Line
+	2950 4050 2850 4050
+Text GLabel 5200 4400 0    50   UnSpc ~ 0
+-HeaterVolt
+Text GLabel 5300 4400 2    50   UnSpc ~ 0
++HeaterVolt
+Wire Wire Line
+	5200 4250 5200 4400
+Wire Wire Line
+	5300 4250 5300 4400
+Text GLabel 2750 4050 1    50   UnSpc ~ 0
++HeaterVolt
+$Comp
+L power:-24V #PWR0111
+U 1 1 5ED947B9
+P 2700 1200
+F 0 "#PWR0111" H 2700 1300 50  0001 C CNN
+F 1 "-24V" V 2715 1328 50  0000 L CNN
+F 2 "" H 2700 1200 50  0001 C CNN
+F 3 "" H 2700 1200 50  0001 C CNN
+	1    2700 1200
+	0    -1   -1   0   
+$EndComp
+Text GLabel 2700 3150 0    50   UnSpc ~ 0
+-HeaterVolt
+$Comp
+L power:+5V #PWR0114
+U 1 1 5ED9EB05
+P 6500 1300
+F 0 "#PWR0114" H 6500 1150 50  0001 C CNN
+F 1 "+5V" H 6515 1473 50  0000 C CNN
+F 2 "" H 6500 1300 50  0001 C CNN
+F 3 "" H 6500 1300 50  0001 C CNN
+	1    6500 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0115
+U 1 1 5ED9F7C3
+P 6750 1300
+F 0 "#PWR0115" H 6750 1050 50  0001 C CNN
+F 1 "GND" H 6755 1127 50  0000 C CNN
+F 2 "" H 6750 1300 50  0001 C CNN
+F 3 "" H 6750 1300 50  0001 C CNN
+	1    6750 1300
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0117
+U 1 1 5EDA4A03
+P 5600 3150
+F 0 "#PWR0117" H 5600 2900 50  0001 C CNN
+F 1 "GND" H 5605 2977 50  0000 C CNN
+F 2 "" H 5600 3150 50  0001 C CNN
+F 3 "" H 5600 3150 50  0001 C CNN
+	1    5600 3150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7400 3300 4900 3300
+Wire Wire Line
+	4900 2400 4900 3300
+Wire Wire Line
+	7400 1050 7400 3300
+Wire Wire Line
+	7800 1750 6500 1750
+Wire Wire Line
+	6500 1750 6500 1300
+Connection ~ 7800 1750
+Wire Wire Line
+	7800 1750 7800 1950
+Wire Wire Line
+	6750 1300 6750 1650
+Wire Wire Line
+	6750 1650 7900 1650
+Wire Wire Line
+	2700 1100 2300 1100
+Wire Wire Line
+	2300 1100 2300 1750
+Wire Wire Line
+	2300 3050 2700 3050
+Wire Wire Line
+	2700 2400 2300 2400
+Connection ~ 2300 2400
+Wire Wire Line
+	2300 2400 2300 3050
+Wire Wire Line
+	2700 1750 2300 1750
+Connection ~ 2300 1750
+Wire Wire Line
+	2300 1750 2300 2400
+$Comp
+L power:GND #PWR0118
+U 1 1 5EDB5CAF
+P 2300 1750
+F 0 "#PWR0118" H 2300 1500 50  0001 C CNN
+F 1 "GND" H 2305 1577 50  0000 C CNN
+F 2 "" H 2300 1750 50  0001 C CNN
+F 3 "" H 2300 1750 50  0001 C CNN
+	1    2300 1750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4250 4050 4350 4050
+Wire Wire Line
+	4350 4050 4350 3850
+Wire Wire Line
+	4350 3850 4600 3850
+Wire Wire Line
+	4600 3850 4600 2600
+Wire Wire Line
+	4600 2600 5000 2600
+NoConn ~ 6000 2700
+NoConn ~ 6000 2600
+NoConn ~ 5000 2500
+NoConn ~ 5000 2300
+NoConn ~ 5000 2200
+NoConn ~ 5000 2100
+NoConn ~ 5000 2000
+NoConn ~ 5000 1900
+NoConn ~ 6000 2400
+NoConn ~ 6000 2300
+NoConn ~ 6000 1700
+NoConn ~ 6000 1500
+NoConn ~ 6000 1300
+NoConn ~ 5600 900 
+NoConn ~ 5000 1300
+NoConn ~ 5000 1400
+NoConn ~ 2700 1300
+NoConn ~ 2700 1950
+NoConn ~ 2700 2600
+NoConn ~ 2700 3250
+Wire Wire Line
+	5400 3000 5400 3150
+Wire Wire Line
+	5600 3150 5600 3000
+Wire Wire Line
+	5600 3150 5500 3150
+Connection ~ 5600 3150
+Wire Wire Line
+	5500 3000 5500 3150
+Connection ~ 5500 3150
+Wire Wire Line
+	5500 3150 5400 3150
+$Comp
+L power:GND #PWR0103
+U 1 1 5EE71A5B
+P 6200 4400
+F 0 "#PWR0103" H 6200 4150 50  0001 C CNN
+F 1 "GND" H 6205 4227 50  0000 C CNN
+F 2 "" H 6200 4400 50  0001 C CNN
+F 3 "" H 6200 4400 50  0001 C CNN
+	1    6200 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0112
+U 1 1 5EE780AB
+P 2700 1850
+F 0 "#PWR0112" H 2700 1600 50  0001 C CNN
+F 1 "GND" H 2705 1677 50  0000 C CNN
+F 2 "" H 2700 1850 50  0001 C CNN
+F 3 "" H 2700 1850 50  0001 C CNN
+	1    2700 1850
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0113
+U 1 1 5EE7E526
+P 2700 2500
+F 0 "#PWR0113" H 2700 2250 50  0001 C CNN
+F 1 "GND" H 2705 2327 50  0000 C CNN
+F 2 "" H 2700 2500 50  0001 C CNN
+F 3 "" H 2700 2500 50  0001 C CNN
+	1    2700 2500
+	0    1    1    0   
+$EndComp
+$EndSCHEMATC
