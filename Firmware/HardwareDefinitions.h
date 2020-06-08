@@ -1,5 +1,8 @@
+#ifndef HARDWAREDEFINITIONS_H
+#define HARDWAREDEFINITIONS_H
+
 #define Mister_Relay_Pin 2
-#define WaterSolenoid_Relay_Pin 3
+#define Solenoid_Relay_Pin 3
 #define Fan_Relay_Pin 4
 //#define Heater_Relay_Pin 5
 
@@ -11,3 +14,5 @@
 #define DHT2_Pin A1
 #define DHT3_Pin A2
 #define DHT4_Pin A3
+
+#endif //HARDWAREDEFINITIONS_H
