@@ -6,7 +6,9 @@
 #define Fan_Relay_Pin 4
 //#define Heater_Relay_Pin 5
 
-#define AirLockServo_Pin 11
+#define AirFlapServo_Pin 11
+#define AirFlapServo_ClosedPosition 50
+#define AIrFlapServo_OpenPosition 60
 
 #define WaterSwitch_Pin 13
 

@@ -5,24 +5,20 @@ extern "C"
   #include "waterSwitch.h"
 }
 
-relay_t mister;
-relay_t solenoid;
-relay_t fan;
+relay_t mister {Mister_Relay_Pin};
+relay_t solenoid {Solenoid_Relay_Pin};
+relay_t fan {Fan_Relay_Pin};
 
-waterSwitch_t waterSwitch;
+waterSwitch_t waterSwitch {WaterSwitch_Pin};
 
 void setup()
 {  
- mister.pinNumber = Mister_Relay_Pin; 
  initRelay(&mister);
 
- solenoid.pinNumber = Solenoid_Relay_Pin; 
  initRelay(&solenoid);
 
- fan.pinNumber = Fan_Relay_Pin; 
  initRelay(&fan);
-
- waterSwitch.pinNumber = WaterSwitch_Pin;
+ 
  initWaterSwitch(&waterSwitch);
 
  Serial.begin(115200);

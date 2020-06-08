@@ -5,7 +5,7 @@
 
 typedef struct
 {
-  int pinNumber;
+  const int pinNumber;
   bool enabledState;    //on = true.  off = false.
 } relay_t;
 
