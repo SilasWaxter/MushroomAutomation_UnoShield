@@ -30,7 +30,5 @@ void setup()
 
 void loop()
 {
-  enRelay(&mister);
-  enRelay(&solenoid);
-  delay(250);
+  
 }
