@@ -6,9 +6,10 @@
 
 typedef struct
 {
+  const int pinNumber;
+  const int openServoPosition;
+  const int closedServoPosition;
   Servo airFlapServo;
-  
-  int pinNumber;
   bool openState;    //on = true.  off = false.
 } airFlap_t;
 

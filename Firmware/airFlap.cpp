@@ -25,10 +25,10 @@ static void setAirFlap(airFlap_t* airFlap_obj)     //open or close air flap
 {
   if(airFlap_obj->openState)
   {
-    //airFlap_obj->airFlapServo.write(
+    airFlap_obj->airFlapServo.write(airFlap_obj->openServoPosition);
   }
   else
   {
-    
+    airFlap_obj->airFlapServo.write(airFlap_obj->closedServoPosition);
   }
 }
