@@ -6,7 +6,7 @@
 typedef struct
 {
   const int pinNumber;
-  bool enabledState;    //on = true.  off = false.
+  bool state;    //on = true.  off = false.
 } switch_t;
 
 void initSwitch(switch_t* switch_obj);

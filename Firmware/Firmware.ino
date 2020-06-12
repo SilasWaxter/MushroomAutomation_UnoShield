@@ -12,7 +12,7 @@ relay_t mister {RELAY_MISTER_PIN};
 relay_t inflowSolenoid {RELAY_INFLOWSOLENOID_PIN};
 relay_t fan {RELAY_FAN_PIN};
 
-switch_t waterSwitch {SWITCH_WATERHEIGHT_PIN};
+switch_t waterHeightSwitch {SWITCH_WATERHEIGHT_PIN};
 
 servoSwitch_t airFlapServo {SERVO_AIRFLAP_PIN, SERVO_AIRFLAP_OPENPOS, SERVO_AIRFLAP_CLOSEPOS};
 
@@ -22,8 +22,13 @@ DHT dht3(DHT3_PIN, 11);
 DHT dht4(DHT4_PIN, 11);
 
 void setup()
-{  
+{ 
+   
  Serial.begin(115200);
+
+ initSwitch(&waterHeightSwitch);
+ readSwitch(&waterHeightSwitch);
+ Serial.println(waterHeightSwitch.state);
   /*
  initRelay(&mister);
 

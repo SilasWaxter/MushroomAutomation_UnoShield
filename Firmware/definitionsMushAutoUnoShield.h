@@ -11,8 +11,7 @@
 #define SERVO_AIRFLAP_CLOSEPOS 130
 
 
-//#define SWITCH_WATERHEIGHT_PIN 13     //PCB definition
-#define SWITCH_WATERHEIGHT_PIN 13       //with jumper
+#define SWITCH_WATERHEIGHT_PIN 13     //PCB definition
 
 #define DHT1_PIN A0
 #define DHT2_PIN A1

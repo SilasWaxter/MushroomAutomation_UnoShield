@@ -8,5 +8,5 @@ void initSwitch(switch_t* switch_obj)
 
 void readSwitch(switch_t* switch_obj)
 {
-  switch_obj->enabledState = digitalRead(switch_obj->pinNumber);
+  switch_obj->state = digitalRead(switch_obj->pinNumber);
 }
