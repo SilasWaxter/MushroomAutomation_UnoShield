@@ -1,34 +1,37 @@
-#include "hardwareDefinitions.h"
-#include "airFlap.h"
+#include "definitionsMushAutoUnoShield.h"
+#include "servoSwitch.h"
 #include "DHT.h"
 extern "C"
 {
   #include "relay.h"
-  #include "waterSwitch.h"
+  #include "switch.h"
 }
 
-relay_t mister {Mister_Relay_Pin};
-relay_t solenoid {Solenoid_Relay_Pin};
-relay_t fan {Fan_Relay_Pin};
+//Hardware Objects
+relay_t mister {RELAY_MISTER_PIN};
+relay_t inflowSolenoid {RELAY_INFLOWSOLENOID_PIN};
+relay_t fan {RELAY_FAN_PIN};
 
-waterSwitch_t waterSwitch {WaterSwitch_Pin};
+switch_t waterSwitch {SWITCH_WATERHEIGHT_PIN};
 
-airFlap_t airFlap {AirFlapServo_Pin, AirFlapServo_OpenPosition, AirFlapServo_ClosedPosition};
+servoSwitch_t airFlapServo {SERVO_AIRFLAP_PIN, SERVO_AIRFLAP_OPENPOS, SERVO_AIRFLAP_CLOSEPOS};
 
-DHT dht1(DHT1_Pin, 11);
-DHT dht2(DHT2_Pin, 11);
-DHT dht3(DHT3_Pin, 11);
-DHT dht4(DHT4_Pin, 11);
+DHT dht1(DHT1_PIN, 11);
+DHT dht2(DHT2_PIN, 11);
+DHT dht3(DHT3_PIN, 11);
+DHT dht4(DHT4_PIN, 11);
 
 void setup()
 {  
+ Serial.begin(115200);
+  /*
  initRelay(&mister);
 
  initRelay(&solenoid);
 
  initRelay(&fan);
  
- initWaterSwitch(&waterSwitch);
+ initFloatSwitch(&floatSwitch);
 
  initAirFlap(&airFlap);
 
@@ -36,12 +39,13 @@ void setup()
  dht2.begin();
  dht3.begin();
  dht4.begin();
+ */
  
- Serial.begin(115200);
 }
 
 void loop()
 {
+  /*
   float h1, h2, h3, h4;
   h1 = dht1.readHumidity();
   h2 = dht2.readHumidity();
@@ -50,4 +54,5 @@ void loop()
 
   Serial.println(String(h1) + ", " + String(h2) + ", " +  String(h3) + ", " +  String(h4));
   delay(1000);
+  */
 }

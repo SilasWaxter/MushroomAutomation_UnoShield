@@ -10,11 +10,8 @@ typedef struct
   long lastExecTime;                //timestamp of last execution of task
 } task_t;
 
-
-void execTaskIfReady(task_t* task_obj);
+static inline void execTask(task_t* task_obj, void* task());
+bool isAllowedExec(task_t* task_obj);           //returns whether task is ready
 long getTimeToAllowedExec(task_t* task_obj);    //gets the minimum time till repitition of task
-
-static inline void __execTask(void* task());
-bool __isAllowedExec(task_t* task_obj);           //returns whether task is ready
 
 #endif //TASKSCHEDULER_H
