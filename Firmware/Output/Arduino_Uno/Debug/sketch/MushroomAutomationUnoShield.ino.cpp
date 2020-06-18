@@ -15,8 +15,13 @@ extern "C"
 }
 
 #define DEBUG_MODE true
+#define TARGET_HUMIDITY 80
 
 //Humidity Object
+#define ENTIME_TIMERSWITCH_MISTER 5000
+#define DISTIME_TIMERSWITCH_MISTER 0
+digTimerSwitch_t timerSwitch_Mister {ENTIME_TIMERSWITCH_MISTER, DISTIME_TIMERSWITCH_MISTER}
+;
 humidityController_t humidityController;
 
 //AirFlow Object
@@ -49,11 +54,11 @@ DHT dht2(DHT2_PIN, 11);
 DHT dht3(DHT3_PIN, 11);
 DHT dht4(DHT4_PIN, 11);
 
-#line 49 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
+#line 54 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
 void setup();
-#line 85 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
+#line 93 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
 void loop();
-#line 49 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
+#line 54 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
 void setup()
 { 
 	Serial.begin(115200);
@@ -72,17 +77,20 @@ void setup()
 	//Init Abstractions
 	//AirFlow
 	initTimerSwitch(&timerSwitch_AirFlow);
+	airFlowController.timerSwitch = &timerSwitch_AirFlow;
 	airFlowController.airFlapServo = &airFlapServo;
 	airFlowController.inflowFan = &fan;
-	airFlowController.timerSwitch = &timerSwitch_AirFlow;
 	
 	//WaterLevel
 	initTimerSwitch(&timerSwitch_WaterLevel);
+	waterLevelController.timerSwitch = &timerSwitch_WaterLevel;
 	waterLevelController.heightSwitch = &waterHeightSwitch;
 	waterLevelController.inflowSolenoid = &inflowSolenoid;
-	waterLevelController.timerSwitch = &timerSwitch_WaterLevel;
 	
 	//Humidity
+	initTimerSwitch(&timerSwitch_Mister);
+	humidityController.timerSwitch_Mister = &timerSwitch_Mister;
+	humidityController.fan = &fan;
 	humidityController.dht[0] = &dht1;
 	humidityController.dht[1] = &dht2;
 	humidityController.dht[2] = &dht3;
@@ -96,7 +104,8 @@ void loop()
 	
 	//maintainWaterLevel(&waterLevelController);
 	
-	updateHumidity(&humidityController, DEBUG_MODE);
+	//getHumidity(&humidityController, DEBUG_MODE);
 	
+	//maintainHumidity(&humidityController, TARGET_HUMIDITY);
 }
 

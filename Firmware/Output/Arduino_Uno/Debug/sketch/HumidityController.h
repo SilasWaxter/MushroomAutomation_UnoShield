@@ -12,14 +12,19 @@ extern "C"
 
 typedef struct
 {
+	digTimerSwitch_t* timerSwitch_Mister;
+	
 	float sensorHumidity[4] {0, 0, 0, 0};
 	float averageHumidity {0};
 
 	//Hardware
 	DHT* dht[4];
 	relay_t* mister;	
+	relay_t* fan;
 } humidityController_t;
 
-void updateHumidity(humidityController_t* humidityController_obj, bool enDebug);
+void getHumidity(humidityController_t* humidityController_obj, bool enDebug);
+
+void maintainHumidity(humidityController_t* humidityController_obj, float tgtHumidity);
 
 #endif //HUMIDITYCONTROLLER_H

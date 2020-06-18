@@ -15,7 +15,12 @@ extern "C"
 
 
 
+
 //Humidity Object
+
+
+digTimerSwitch_t timerSwitch_Mister {5000, 0}
+;
 humidityController_t humidityController;
 
 //AirFlow Object
@@ -66,17 +71,20 @@ void setup()
  //Init Abstractions
  //AirFlow
  initTimerSwitch(&timerSwitch_AirFlow);
+ airFlowController.timerSwitch = &timerSwitch_AirFlow;
  airFlowController.airFlapServo = &airFlapServo;
  airFlowController.inflowFan = &fan;
- airFlowController.timerSwitch = &timerSwitch_AirFlow;
 
  //WaterLevel
  initTimerSwitch(&timerSwitch_WaterLevel);
+ waterLevelController.timerSwitch = &timerSwitch_WaterLevel;
  waterLevelController.heightSwitch = &waterHeightSwitch;
  waterLevelController.inflowSolenoid = &inflowSolenoid;
- waterLevelController.timerSwitch = &timerSwitch_WaterLevel;
 
  //Humidity
+ initTimerSwitch(&timerSwitch_Mister);
+ humidityController.timerSwitch_Mister = &timerSwitch_Mister;
+ humidityController.fan = &fan;
  humidityController.dht[0] = &dht1;
  humidityController.dht[1] = &dht2;
  humidityController.dht[2] = &dht3;
@@ -90,6 +98,7 @@ void loop()
 
  //maintainWaterLevel(&waterLevelController);
 
- updateHumidity(&humidityController, true);
+ //getHumidity(&humidityController, DEBUG_MODE);
 
+ //maintainHumidity(&humidityController, TARGET_HUMIDITY);
 }
