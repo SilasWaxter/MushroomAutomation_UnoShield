@@ -29,7 +29,6 @@ void maintainHumidity(humidityController_t* humidityController_obj, float tgtHum
 		if (humidityController_obj->timerSwitch_Mister->currentStateEn)
 		{
 			disRelay(humidityController_obj->mister);
-			disRelay(humidityController_obj->fan);
 			disTimerSwitch(humidityController_obj->timerSwitch_Mister);
 		}
 		else
@@ -37,7 +36,6 @@ void maintainHumidity(humidityController_t* humidityController_obj, float tgtHum
 			if (humidityController_obj->averageHumidity < tgtHumidity)
 			{
 				enRelay(humidityController_obj->mister);
-				enRelay(humidityController_obj->fan);
 				enTimerSwitch(humidityController_obj->timerSwitch_Mister);
 			}
 		}

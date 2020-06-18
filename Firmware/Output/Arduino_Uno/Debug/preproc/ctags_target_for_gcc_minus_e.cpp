@@ -26,7 +26,7 @@ humidityController_t humidityController;
 //AirFlow Object
 
 
-digTimerSwitch_t timerSwitch_AirFlow {5000, 5000};
+digTimerSwitch_t timerSwitch_AirFlow {60000 /*time in mins*/, 90000 /*time in mins*/};
 
 airFlowController_t airFlowController;
 
@@ -36,13 +36,13 @@ waterLevelController_t waterLevelController;
 
 
 
-digTimerSwitch_t timerSwitch_WaterLevel {1000, 0};
+digTimerSwitch_t timerSwitch_WaterLevel {15000, 0};
 
 
 //Hardware Objects
 relay_t mister {2};
 relay_t inflowSolenoid {3};
-relay_t fan {4};
+relay_t fan {4 /*400 Litres of Air/Min		|	Container is 56.7812 litres*/};
 
 switch_t waterHeightSwitch {13 /*PCB definition*/};
 
@@ -84,7 +84,6 @@ void setup()
  //Humidity
  initTimerSwitch(&timerSwitch_Mister);
  humidityController.timerSwitch_Mister = &timerSwitch_Mister;
- humidityController.fan = &fan;
  humidityController.dht[0] = &dht1;
  humidityController.dht[1] = &dht2;
  humidityController.dht[2] = &dht3;
@@ -94,11 +93,11 @@ void setup()
 
 void loop()
 {
- //updateAirFlow(&airFlowController);
+ updateAirFlow(&airFlowController);
 
- //maintainWaterLevel(&waterLevelController);
+ maintainWaterLevel(&waterLevelController);
 
- //getHumidity(&humidityController, DEBUG_MODE);
+ getHumidity(&humidityController, true);
 
- //maintainHumidity(&humidityController, TARGET_HUMIDITY);
+ maintainHumidity(&humidityController, 100);
 }

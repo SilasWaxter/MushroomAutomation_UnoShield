@@ -3,7 +3,7 @@
 
 #define RELAY_MISTER_PIN 2
 #define RELAY_INFLOWSOLENOID_PIN 3
-#define RELAY_FAN_PIN 4
+#define RELAY_FAN_PIN 4					//400 Litres of Air/Min		|	Container is 56.7812 litres
 //#define RELAY_HEATER_PIN 5
 
 #define SERVO_AIRFLAP_PIN 11

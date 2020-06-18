@@ -12,7 +12,7 @@ extern "C"
 }
 
 #define DEBUG_MODE true
-#define TARGET_HUMIDITY 80
+#define TARGET_HUMIDITY 100
 
 //Humidity Object
 #define ENTIME_TIMERSWITCH_MISTER 5000
@@ -22,8 +22,8 @@ digTimerSwitch_t timerSwitch_Mister {ENTIME_TIMERSWITCH_MISTER, DISTIME_TIMERSWI
 humidityController_t humidityController;
 
 //AirFlow Object
-#define ENTIME_TIMERSWITCH_AIRFLOW 5000
-#define DISTIME_TIMERSWITCH_AIRFLOW 5000
+#define ENTIME_TIMERSWITCH_AIRFLOW 60000		//time in mins
+#define DISTIME_TIMERSWITCH_AIRFLOW 90000		//time in mins
 digTimerSwitch_t timerSwitch_AirFlow {ENTIME_TIMERSWITCH_AIRFLOW, DISTIME_TIMERSWITCH_AIRFLOW};
 
 airFlowController_t airFlowController;
@@ -32,7 +32,7 @@ airFlowController_t airFlowController;
 //Waterlevel Object
 waterLevelController_t waterLevelController;
 
-#define ENTIME_TIMERSWITCH_WATERLEVEL 1000
+#define ENTIME_TIMERSWITCH_WATERLEVEL 15000
 #define DISTIME_TIMERSWITCH_WATERLEVEL 0
 digTimerSwitch_t timerSwitch_WaterLevel {ENTIME_TIMERSWITCH_WATERLEVEL, DISTIME_TIMERSWITCH_WATERLEVEL};
 
@@ -82,7 +82,6 @@ void setup()
 	//Humidity
 	initTimerSwitch(&timerSwitch_Mister);
 	humidityController.timerSwitch_Mister = &timerSwitch_Mister;
-	humidityController.fan = &fan;
 	humidityController.dht[0] = &dht1;
 	humidityController.dht[1] = &dht2;
 	humidityController.dht[2] = &dht3;
@@ -92,11 +91,11 @@ void setup()
 
 void loop()
 {
-	//updateAirFlow(&airFlowController);
+	updateAirFlow(&airFlowController);
 	
-	//maintainWaterLevel(&waterLevelController);
+	maintainWaterLevel(&waterLevelController);
 	
-	//getHumidity(&humidityController, DEBUG_MODE);
+	getHumidity(&humidityController, DEBUG_MODE);
 	
-	//maintainHumidity(&humidityController, TARGET_HUMIDITY);
+	maintainHumidity(&humidityController, TARGET_HUMIDITY);
 }

@@ -20,7 +20,6 @@ typedef struct
 	//Hardware
 	DHT* dht[4];
 	relay_t* mister;	
-	relay_t* fan;
 } humidityController_t;
 
 void getHumidity(humidityController_t* humidityController_obj, bool enDebug);
