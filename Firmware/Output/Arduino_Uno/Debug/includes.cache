@@ -1,0 +1,92 @@
+[
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "C:\\Users\\silas\\Documents\\ArduinoData\\packages\\arduino\\hardware\\avr\\1.8.2\\cores\\arduino"
+  },
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "C:\\Users\\silas\\Documents\\ArduinoData\\packages\\arduino\\hardware\\avr\\1.8.2\\variants\\standard"
+  },
+  {
+    "Sourcefile": "W:\\MushroomAutomation\\Firmware\\Output\\Arduino_Uno\\Debug\\sketch\\MushroomAutomationUnoShield.ino.cpp",
+    "Include": "Servo.h",
+    "Includepath": "D:\\Arduino\\libraries\\Servo\\src"
+  },
+  {
+    "Sourcefile": "W:\\MushroomAutomation\\Firmware\\Output\\Arduino_Uno\\Debug\\sketch\\MushroomAutomationUnoShield.ino.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "W:\\MushroomAutomation\\Firmware\\Output\\Arduino_Uno\\Debug\\sketch\\AirFlowController.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "W:\\MushroomAutomation\\Firmware\\Output\\Arduino_Uno\\Debug\\sketch\\DHT.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "W:\\MushroomAutomation\\Firmware\\Output\\Arduino_Uno\\Debug\\sketch\\DigitalTimerSwitch.c",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "W:\\MushroomAutomation\\Firmware\\Output\\Arduino_Uno\\Debug\\sketch\\WaterLevelController.c",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "W:\\MushroomAutomation\\Firmware\\Output\\Arduino_Uno\\Debug\\sketch\\relay.c",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "W:\\MushroomAutomation\\Firmware\\Output\\Arduino_Uno\\Debug\\sketch\\servoSwitch.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "W:\\MushroomAutomation\\Firmware\\Output\\Arduino_Uno\\Debug\\sketch\\switch.c",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Arduino\\libraries\\Servo\\src\\avr\\Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Arduino\\libraries\\Servo\\src\\mbed\\Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Arduino\\libraries\\Servo\\src\\megaavr\\Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Arduino\\libraries\\Servo\\src\\nrf52\\Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Arduino\\libraries\\Servo\\src\\sam\\Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Arduino\\libraries\\Servo\\src\\samd\\Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Arduino\\libraries\\Servo\\src\\stm32f4\\Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  }
+]

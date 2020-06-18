@@ -1,3 +1,4 @@
 Change connections from dupont to JST
 
 Add Pull-Down Resistor to WaterLevel Switch  --OR-- Reconfig for internal Pull-Up Resistor
+	Change Pin Number of WaterSwitch to pin w/ interupt capabillities.
