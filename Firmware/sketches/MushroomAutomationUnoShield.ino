@@ -2,6 +2,7 @@
 #include "servoSwitch.h"
 #include "DHT.h"
 #include "AirFlowController.h"
+#include "HumidityController.h"
 extern "C"
 {
 #include "relay.h"
@@ -10,12 +11,18 @@ extern "C"
 #include "WaterLevelController.h"
 }
 
+#define DEBUG_MODE true
+
+//Humidity Object
+humidityController_t humidityController;
+
 //AirFlow Object
 #define ENTIME_TIMERSWITCH_AIRFLOW 5000
-#define DISTIME_TIMERSWITCH_AIRFLOW 1000
+#define DISTIME_TIMERSWITCH_AIRFLOW 5000
 digTimerSwitch_t timerSwitch_AirFlow {ENTIME_TIMERSWITCH_AIRFLOW, DISTIME_TIMERSWITCH_AIRFLOW};
 
 airFlowController_t airFlowController;
+
 
 //Waterlevel Object
 waterLevelController_t waterLevelController;
@@ -23,6 +30,7 @@ waterLevelController_t waterLevelController;
 #define ENTIME_TIMERSWITCH_WATERLEVEL 1000
 #define DISTIME_TIMERSWITCH_WATERLEVEL 0
 digTimerSwitch_t timerSwitch_WaterLevel {ENTIME_TIMERSWITCH_WATERLEVEL, DISTIME_TIMERSWITCH_WATERLEVEL};
+
 
 //Hardware Objects
 relay_t mister {RELAY_MISTER_PIN};
@@ -48,39 +56,38 @@ void setup()
 	initRelay(&fan);
 	initSwitch(&waterHeightSwitch);
 	initServoSwitch(&airFlapServo);
+	dht1.begin();
+	dht2.begin();
+	dht3.begin();
+	dht4.begin();
   
 	//Init Abstractions
-	initTimerSwitch(&timerSwitch_WaterLevel);
-	waterLevelController.heightSwitch = &waterHeightSwitch;
-	waterLevelController.inflowSolenoid = &inflowSolenoid;
-	waterLevelController.timerSwitch = &timerSwitch_WaterLevel;
-
+	//AirFlow
 	initTimerSwitch(&timerSwitch_AirFlow);
 	airFlowController.airFlapServo = &airFlapServo;
 	airFlowController.inflowFan = &fan;
 	airFlowController.timerSwitch = &timerSwitch_AirFlow;
 	
-//	dht1.begin();
-//	dht2.begin();
-//	dht3.begin();
-//	dht4.begin();
+	//WaterLevel
+	initTimerSwitch(&timerSwitch_WaterLevel);
+	waterLevelController.heightSwitch = &waterHeightSwitch;
+	waterLevelController.inflowSolenoid = &inflowSolenoid;
+	waterLevelController.timerSwitch = &timerSwitch_WaterLevel;
+	
+	//Humidity
+	humidityController.dht[0] = &dht1;
+	humidityController.dht[1] = &dht2;
+	humidityController.dht[2] = &dht3;
+	humidityController.dht[3] = &dht4;
+	humidityController.mister = &mister;
 }
 
 void loop()
 {
+	//updateAirFlow(&airFlowController);
+	
 	//maintainWaterLevel(&waterLevelController);
 	
-	//updateAirFlow(&airFlowController);
-
+	updateHumidity(&humidityController, DEBUG_MODE);
 	
-	
-	
-//	float h1, h2, h3, h4;
-//	h1 = dht1.readHumidity();
-//	h2 = dht2.readHumidity();
-//	h3 = dht3.readHumidity();
-//	h4 = dht4.readHumidity();
-//  
-//	Serial.println(String(h1) + ", " + String(h2) + ", " +  String(h3) + ", " +  String(h4));
-//	delay(1000);
 }

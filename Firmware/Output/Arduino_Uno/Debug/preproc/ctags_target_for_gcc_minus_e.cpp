@@ -4,20 +4,27 @@
 # 3 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino" 2
 # 4 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino" 2
 # 5 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino" 2
+# 6 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino" 2
 extern "C"
 {
 
-# 9 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino" 2
+# 10 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino" 2
 
-# 11 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino" 2
+# 12 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino" 2
 }
+
+
+
+//Humidity Object
+humidityController_t humidityController;
 
 //AirFlow Object
 
 
-digTimerSwitch_t timerSwitch_AirFlow {5000, 1000};
+digTimerSwitch_t timerSwitch_AirFlow {5000, 5000};
 
 airFlowController_t airFlowController;
+
 
 //Waterlevel Object
 waterLevelController_t waterLevelController;
@@ -25,6 +32,7 @@ waterLevelController_t waterLevelController;
 
 
 digTimerSwitch_t timerSwitch_WaterLevel {1000, 0};
+
 
 //Hardware Objects
 relay_t mister {2};
@@ -50,39 +58,38 @@ void setup()
  initRelay(&fan);
  initSwitch(&waterHeightSwitch);
  initServoSwitch(&airFlapServo);
+ dht1.begin();
+ dht2.begin();
+ dht3.begin();
+ dht4.begin();
 
  //Init Abstractions
- initTimerSwitch(&timerSwitch_WaterLevel);
- waterLevelController.heightSwitch = &waterHeightSwitch;
- waterLevelController.inflowSolenoid = &inflowSolenoid;
- waterLevelController.timerSwitch = &timerSwitch_WaterLevel;
-
+ //AirFlow
  initTimerSwitch(&timerSwitch_AirFlow);
  airFlowController.airFlapServo = &airFlapServo;
  airFlowController.inflowFan = &fan;
  airFlowController.timerSwitch = &timerSwitch_AirFlow;
 
-//	dht1.begin();
-//	dht2.begin();
-//	dht3.begin();
-//	dht4.begin();
+ //WaterLevel
+ initTimerSwitch(&timerSwitch_WaterLevel);
+ waterLevelController.heightSwitch = &waterHeightSwitch;
+ waterLevelController.inflowSolenoid = &inflowSolenoid;
+ waterLevelController.timerSwitch = &timerSwitch_WaterLevel;
+
+ //Humidity
+ humidityController.dht[0] = &dht1;
+ humidityController.dht[1] = &dht2;
+ humidityController.dht[2] = &dht3;
+ humidityController.dht[3] = &dht4;
+ humidityController.mister = &mister;
 }
 
 void loop()
 {
- //maintainWaterLevel(&waterLevelController);
-
  //updateAirFlow(&airFlowController);
 
+ //maintainWaterLevel(&waterLevelController);
 
+ updateHumidity(&humidityController, true);
 
-
-//	float h1, h2, h3, h4;
-//	h1 = dht1.readHumidity();
-//	h2 = dht2.readHumidity();
-//	h3 = dht3.readHumidity();
-//	h4 = dht4.readHumidity();
-//  
-//	Serial.println(String(h1) + ", " + String(h2) + ", " +  String(h3) + ", " +  String(h4));
-//	delay(1000);
 }

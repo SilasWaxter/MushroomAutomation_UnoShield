@@ -26,6 +26,7 @@
         <string>sketches\servoSwitch.h</string>
         <string>sketches\WaterLevelController.h</string>
         <string>sketches\AirFlowController.h</string>
+        <string>sketches\HumidityController.h</string>
       </OtherFiles>
     </ProjectModeSettings>
   </Project>

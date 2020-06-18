@@ -19,5 +19,6 @@ W:\MushroomAutomation\Firmware\Output\Arduino_Uno\Debug\sketch\MushroomAutomatio
  W:\MushroomAutomation\Firmware\Output\Arduino_Uno\Debug\sketch\AirFlowController.h \
  W:\MushroomAutomation\Firmware\Output\Arduino_Uno\Debug\sketch\DigitalTimerSwitch.h \
  W:\MushroomAutomation\Firmware\Output\Arduino_Uno\Debug\sketch\relay.h \
+ W:\MushroomAutomation\Firmware\Output\Arduino_Uno\Debug\sketch\HumidityController.h \
  W:\MushroomAutomation\Firmware\Output\Arduino_Uno\Debug\sketch\switch.h \
  W:\MushroomAutomation\Firmware\Output\Arduino_Uno\Debug\sketch\WaterLevelController.h

@@ -35,6 +35,11 @@
     "Includepath": ""
   },
   {
+    "Sourcefile": "W:\\MushroomAutomation\\Firmware\\Output\\Arduino_Uno\\Debug\\sketch\\HumidityController.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
     "Sourcefile": "W:\\MushroomAutomation\\Firmware\\Output\\Arduino_Uno\\Debug\\sketch\\WaterLevelController.c",
     "Include": "",
     "Includepath": ""
