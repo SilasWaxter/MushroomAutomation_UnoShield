@@ -14,6 +14,10 @@ extern "C"
 }
 
 //AirFlow Object
+#define ENTIME_TIMERSWITCH_AIRFLOW 5000
+#define DISTIME_TIMERSWITCH_AIRFLOW 1000
+digTimerSwitch_t timerSwitch_AirFlow {ENTIME_TIMERSWITCH_AIRFLOW, DISTIME_TIMERSWITCH_AIRFLOW};
+
 airFlowController_t airFlowController;
 
 //Waterlevel Object
@@ -37,11 +41,11 @@ DHT dht2(DHT2_PIN, 11);
 DHT dht3(DHT3_PIN, 11);
 DHT dht4(DHT4_PIN, 11);
 
-#line 37 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
+#line 41 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
 void setup();
-#line 63 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
+#line 69 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
 void loop();
-#line 37 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
+#line 41 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
 void setup()
 { 
 	Serial.begin(115200);
@@ -59,8 +63,10 @@ void setup()
 	waterLevelController.inflowSolenoid = &inflowSolenoid;
 	waterLevelController.timerSwitch = &timerSwitch_WaterLevel;
 
+	initTimerSwitch(&timerSwitch_AirFlow);
 	airFlowController.airFlapServo = &airFlapServo;
 	airFlowController.inflowFan = &fan;
+	airFlowController.timerSwitch = &timerSwitch_AirFlow;
 	
 //	dht1.begin();
 //	dht2.begin();
@@ -72,6 +78,7 @@ void loop()
 {
 	//maintainWaterLevel(&waterLevelController);
 	
+	//updateAirFlow(&airFlowController);
 
 	
 	

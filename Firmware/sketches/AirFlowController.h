@@ -22,6 +22,8 @@ typedef struct
 	servoSwitch_t* airFlapServo;
 } airFlowController_t;
 
-void setAirFlow(airFlowController_t* airFlowController_obj, bool tgtState);
+void updateAirFlow(airFlowController_t* airFlowController_obj);
+
+static void setAirFlow(airFlowController_t* airFlowController_obj, bool tgtState);
 
 #endif // !AIRFLOWCONTROLLER_H

@@ -13,6 +13,10 @@ extern "C"
 }
 
 //AirFlow Object
+
+
+digTimerSwitch_t timerSwitch_AirFlow {5000, 1000};
+
 airFlowController_t airFlowController;
 
 //Waterlevel Object
@@ -53,8 +57,10 @@ void setup()
  waterLevelController.inflowSolenoid = &inflowSolenoid;
  waterLevelController.timerSwitch = &timerSwitch_WaterLevel;
 
+ initTimerSwitch(&timerSwitch_AirFlow);
  airFlowController.airFlapServo = &airFlapServo;
  airFlowController.inflowFan = &fan;
+ airFlowController.timerSwitch = &timerSwitch_AirFlow;
 
 //	dht1.begin();
 //	dht2.begin();
@@ -66,6 +72,7 @@ void loop()
 {
  //maintainWaterLevel(&waterLevelController);
 
+ //updateAirFlow(&airFlowController);
 
 
 
