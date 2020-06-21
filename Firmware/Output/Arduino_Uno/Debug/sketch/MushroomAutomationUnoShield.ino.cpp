@@ -25,8 +25,8 @@ digTimerSwitch_t timerSwitch_Mister {ENTIME_TIMERSWITCH_MISTER, DISTIME_TIMERSWI
 humidityController_t humidityController;
 
 //AirFlow Object
-#define ENTIME_TIMERSWITCH_AIRFLOW 60000		//time in mins
-#define DISTIME_TIMERSWITCH_AIRFLOW 90000		//time in mins
+#define ENTIME_TIMERSWITCH_AIRFLOW 30000		//time in mins
+#define DISTIME_TIMERSWITCH_AIRFLOW 120000		//time in mins
 digTimerSwitch_t timerSwitch_AirFlow {ENTIME_TIMERSWITCH_AIRFLOW, DISTIME_TIMERSWITCH_AIRFLOW};
 
 airFlowController_t airFlowController;
@@ -35,7 +35,7 @@ airFlowController_t airFlowController;
 //Waterlevel Object
 waterLevelController_t waterLevelController;
 
-#define ENTIME_TIMERSWITCH_WATERLEVEL 15000
+#define ENTIME_TIMERSWITCH_WATERLEVEL 3000
 #define DISTIME_TIMERSWITCH_WATERLEVEL 0
 digTimerSwitch_t timerSwitch_WaterLevel {ENTIME_TIMERSWITCH_WATERLEVEL, DISTIME_TIMERSWITCH_WATERLEVEL};
 
@@ -56,14 +56,15 @@ DHT dht4(DHT4_PIN, 11);
 
 #line 54 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
 void setup();
-#line 92 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
+#line 99 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
 void loop();
 #line 54 "W:\\MushroomAutomation\\Firmware\\sketches\\MushroomAutomationUnoShield.ino"
 void setup()
 { 
+#pragma region Initilization Code
 	Serial.begin(115200);
 	
-	//Init Hardware	
+	//HARDWARE
 	initRelay(&mister);
 	initRelay(&inflowSolenoid);
 	initRelay(&fan);
@@ -74,12 +75,11 @@ void setup()
 	dht3.begin();
 	dht4.begin();
   
-	//Init Abstractions
+	//ABSTRACTIONS
 	//AirFlow
 	initTimerSwitch(&timerSwitch_AirFlow);
 	airFlowController.timerSwitch = &timerSwitch_AirFlow;
 	airFlowController.airFlapServo = &airFlapServo;
-	airFlowController.inflowFan = &fan;
 	
 	//WaterLevel
 	initTimerSwitch(&timerSwitch_WaterLevel);
@@ -94,12 +94,19 @@ void setup()
 	humidityController.dht[1] = &dht2;
 	humidityController.dht[2] = &dht3;
 	humidityController.dht[3] = &dht4;
-	humidityController.mister = &mister;
+	humidityController.mister = &mister;		  
+#pragma endregion
+
+#pragma region Application Code
+	//Fan is always on
+	enRelay(&fan);
+	
+#pragma endregion	
 }
 
 void loop()
 {
-	updateAirFlow(&airFlowController);
+	//updateAirFlow(&airFlowController);
 	
 	maintainWaterLevel(&waterLevelController);
 	

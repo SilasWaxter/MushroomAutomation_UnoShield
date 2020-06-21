@@ -18,7 +18,6 @@ typedef struct
 	digTimerSwitch_t* timerSwitch;
 	
 	//hardware
-	relay_t* inflowFan;
 	servoSwitch_t* airFlapServo;
 } airFlowController_t;
 

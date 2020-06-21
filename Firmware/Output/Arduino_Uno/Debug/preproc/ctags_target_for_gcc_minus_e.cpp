@@ -26,7 +26,7 @@ humidityController_t humidityController;
 //AirFlow Object
 
 
-digTimerSwitch_t timerSwitch_AirFlow {60000 /*time in mins*/, 90000 /*time in mins*/};
+digTimerSwitch_t timerSwitch_AirFlow {30000 /*time in mins*/, 120000 /*time in mins*/};
 
 airFlowController_t airFlowController;
 
@@ -36,7 +36,7 @@ waterLevelController_t waterLevelController;
 
 
 
-digTimerSwitch_t timerSwitch_WaterLevel {15000, 0};
+digTimerSwitch_t timerSwitch_WaterLevel {3000, 0};
 
 
 //Hardware Objects
@@ -55,9 +55,10 @@ DHT dht4(A3, 11);
 
 void setup()
 {
+#pragma region Initilization Code
  Serial.begin(115200);
 
- //Init Hardware	
+ //HARDWARE
  initRelay(&mister);
  initRelay(&inflowSolenoid);
  initRelay(&fan);
@@ -68,12 +69,11 @@ void setup()
  dht3.begin();
  dht4.begin();
 
- //Init Abstractions
+ //ABSTRACTIONS
  //AirFlow
  initTimerSwitch(&timerSwitch_AirFlow);
  airFlowController.timerSwitch = &timerSwitch_AirFlow;
  airFlowController.airFlapServo = &airFlapServo;
- airFlowController.inflowFan = &fan;
 
  //WaterLevel
  initTimerSwitch(&timerSwitch_WaterLevel);
@@ -89,11 +89,18 @@ void setup()
  humidityController.dht[2] = &dht3;
  humidityController.dht[3] = &dht4;
  humidityController.mister = &mister;
+#pragma endregion
+
+#pragma region Application Code
+ //Fan is always on
+ enRelay(&fan);
+
+#pragma endregion
 }
 
 void loop()
 {
- updateAirFlow(&airFlowController);
+ //updateAirFlow(&airFlowController);
 
  maintainWaterLevel(&waterLevelController);
 

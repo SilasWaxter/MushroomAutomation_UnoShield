@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <VisualGDBProjectSettings2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ConfigurationName>Debug</ConfigurationName>
   <Project xsi:type="com.visualgdb.project.external.arduino">
     <CustomSourceDirectories>
       <Directories />
@@ -105,12 +106,7 @@
           <EnableNonStopMode>false</EnableNonStopMode>
           <MaxBreakpointLimit>0</MaxBreakpointLimit>
         </AdditionalGDBSettings>
-        <DebugMethod>
-          <ID>gdbsim</ID>
-          <Configuration>
-            <Entries />
-          </Configuration>
-        </DebugMethod>
+        <DebugMethod />
         <AutoDetectRTOS>true</AutoDetectRTOS>
         <SemihostingSupport>Auto</SemihostingSupport>
         <SemihostingPollingDelay>0</SemihostingPollingDelay>
@@ -127,7 +123,6 @@
       </DebugSettingsOverride>
       <BuildSettingsExtension xsi:type="com.visualgdb.build.external.arduino.extension">
         <BoardID>arduino:avr:uno</BoardID>
-        <COMPort>COM3</COMPort>
         <Properties>
           <Entries />
         </Properties>
